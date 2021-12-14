@@ -9,29 +9,29 @@ import Foundation
 import CoreGraphics
 
 extension CGFloat {
-    var float: Float {
+    public var float: Float {
         return Float(self)
     }
 }
 
 extension Int {
-    var string: String {
+    public var string: String {
         return "\(self)"
     }
 }
 
 extension String {
-    var integer: Int? {
+    public var integer: Int? {
         return Int(self)
     }
 }
 
 extension Int {
-    var cgFloat: CGFloat {
+    public var cgFloat: CGFloat {
         return CGFloat(self)
     }
     
-    var float: Float {
+    public var float: Float {
         return Float(self)
     }
 }

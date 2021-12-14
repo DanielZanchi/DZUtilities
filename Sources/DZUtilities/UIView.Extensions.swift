@@ -172,7 +172,7 @@ extension UIView {
         }
     }
     
-    enum Location {
+    public enum Location {
         case fromTopRightToBottomLeft
     }
     
