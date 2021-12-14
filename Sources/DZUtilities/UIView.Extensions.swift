@@ -9,21 +9,21 @@ import UIKit
 
 extension UIView {
     
-    func addRadius(of radius: CGFloat) {
+    public func addRadius(of radius: CGFloat) {
         self.clipsToBounds = true
         self.layer.cornerRadius = radius
     }
     
-    func addBorder(ofColor borderColor: UIColor = .black, borderWidth: CGFloat = 1) {
+    public func addBorder(ofColor borderColor: UIColor = .black, borderWidth: CGFloat = 1) {
         self.layer.borderWidth = borderWidth
         self.layer.borderColor = borderColor.cgColor
     }
     
-    func addFullRadius() {
+    public func addFullRadius() {
         self.addRadius(of: self.frame.height / 2)
     }
     
-    func addShadow(offset: CGSize, color: UIColor = .black, opacity: Float = 0.5, radius: CGFloat = 5.0) {
+    public func addShadow(offset: CGSize, color: UIColor = .black, opacity: Float = 0.5, radius: CGFloat = 5.0) {
         self.layer.masksToBounds = false
         self.layer.shadowColor = color.cgColor
         self.layer.shadowOffset = offset
@@ -31,7 +31,7 @@ extension UIView {
         self.layer.shadowRadius = radius
     }
     
-    func addDefaultShadowAndFullRadius() {
+    public func addDefaultShadowAndFullRadius() {
         self.addRadius(of: self.frame.height / 2)
         self.addShadow(offset: CGSize(width: 0, height: 0),
                        color: .black,
@@ -39,7 +39,7 @@ extension UIView {
                        radius: 6)
     }
     
-    func addShadowAndCorner(_ radius: CGFloat = 8) {
+    public func addShadowAndCorner(_ radius: CGFloat = 8) {
         self.clipsToBounds = true
         self.layer.cornerRadius = radius
         self.layer.shadowColor = UIColor.lightGray.cgColor
@@ -49,7 +49,7 @@ extension UIView {
         self.layer.masksToBounds = false
     }
     
-    func addLineDashedStroke(pattern: [NSNumber]? = [4, 4], radius: CGFloat, color: CGColor, lineWidh: CGFloat = 3) {
+    public func addLineDashedStroke(pattern: [NSNumber]? = [4, 4], radius: CGFloat, color: CGColor, lineWidh: CGFloat = 3) {
         let borderLayer = CAShapeLayer()
         borderLayer.name = "lineDashedStroke"
         borderLayer.strokeColor = color
@@ -63,7 +63,7 @@ extension UIView {
         layer.addSublayer(borderLayer)
     }
     
-    func removeLineDashedStroke() {
+    public func removeLineDashedStroke() {
         self.layer.sublayers?
             .filter { $0.name == "lineDashedStroke" }
             .forEach { $0.removeFromSuperlayer() }
@@ -71,7 +71,7 @@ extension UIView {
 }
 
 extension UIView {
-    func addGesture(selector: Selector, target: UIViewController) {
+    public func addGesture(selector: Selector, target: UIViewController) {
         let tapGesture = UITapGestureRecognizer(target: target, action: selector)
         self.addGestureRecognizer(tapGesture)
     }
@@ -79,7 +79,7 @@ extension UIView {
 
 extension UIView {
     
-    func asImage() -> UIImage {
+    public func asImage() -> UIImage {
         let renderer = UIGraphicsImageRenderer(bounds: bounds)
         return renderer.image { rendererContext in
             layer.render(in: rendererContext.cgContext)
@@ -102,7 +102,7 @@ extension UIView {
 //MARK:- Constraints
 extension UIView {
     
-    func sameConstraints(as view: UIView) {
+    public func sameConstraints(as view: UIView) {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         self.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
@@ -110,7 +110,7 @@ extension UIView {
         self.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
-    func centerInSuperView() {
+    public func centerInSuperView() {
         if let superview = self.superview {
             self.translatesAutoresizingMaskIntoConstraints = false
             self.centerYAnchor.constraint(equalTo: superview.centerYAnchor).isActive = true
@@ -118,7 +118,7 @@ extension UIView {
         }
     }
     
-    func makeSize(width: CGFloat, height: CGFloat) {
+    public func makeSize(width: CGFloat, height: CGFloat) {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.widthAnchor.constraint(equalToConstant: width).isActive = true
         self.heightAnchor.constraint(equalToConstant: height).isActive = true
@@ -130,7 +130,7 @@ extension UIView {
 //MARK:- Animations
 extension UIView {
     
-    func tapBounce() {
+    public func tapBounce() {
         DispatchQueue.main.async {
             UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveEaseInOut, animations: {
                 self.transform = CGAffineTransform(scaleX: 0.84, y: 0.84)
@@ -146,11 +146,11 @@ extension UIView {
 
 extension UIView {
     
-    func applyGradient(colors: [UIColor]) -> Void {
+    public func applyGradient(colors: [UIColor]) -> Void {
         self.applyGradient(colors: colors, locations: nil)
     }
     
-    func applyGradient(colors: [UIColor], locations: Location?) -> Void {
+    public func applyGradient(colors: [UIColor], locations: Location?) -> Void {
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = self.bounds
         gradient.cornerRadius = self.layer.cornerRadius

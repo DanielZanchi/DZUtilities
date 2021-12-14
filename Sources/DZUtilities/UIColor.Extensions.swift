@@ -58,7 +58,7 @@ extension UIColor {
 
 extension UIColor {
     
-    func image(ofSize size: CGSize) -> UIImage {
+    public func image(ofSize size: CGSize) -> UIImage {
         return UIGraphicsImageRenderer(size: size).image { rendererContext in
             self.setFill()
             rendererContext.fill(CGRect(origin: .zero, size: size))
@@ -68,7 +68,7 @@ extension UIColor {
 }
 
 extension UIColor {
-    func modified(withAdditionalHue hue: CGFloat, additionalSaturation: CGFloat, additionalBrightness: CGFloat, additionalAlpha: CGFloat) -> UIColor {
+    public func modified(withAdditionalHue hue: CGFloat, additionalSaturation: CGFloat, additionalBrightness: CGFloat, additionalAlpha: CGFloat) -> UIColor {
         
         var currentHue: CGFloat = 0.0
         var currentSaturation: CGFloat = 0.0
