@@ -71,7 +71,7 @@ extension UIView {
 }
 
 extension UIView {
-    public func addGesture(selector: Selector, target: UIViewController) {
+    public func addGesture(selector: Selector, target: Any?) {
         let tapGesture = UITapGestureRecognizer(target: target, action: selector)
         self.addGestureRecognizer(tapGesture)
     }
