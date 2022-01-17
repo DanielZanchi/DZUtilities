@@ -15,15 +15,15 @@ extension UIScrollView {
         DispatchQueue.main.asyncAfter(deadline: .now() + startDelay) {
             switch scrollType {
             case .horizontal:
-                let bottomOffset = CGPoint(x: self.bottomViewScrollView.contentSize.width - self.bottomViewScrollView.bounds.width + self.bottomViewScrollView.contentInset.right, y: 0)
-                self.bottomViewScrollView.setContentOffset(bottomOffset, animated: true)
+                let bottomOffset = CGPoint(x: self.contentSize.width - self.bounds.width + self.contentInset.right, y: 0)
+                self.setContentOffset(bottomOffset, animated: true)
             case .vertical:
-                let bottomOffset = CGPoint(x: 0, y: self.bottomViewScrollView.contentSize.height - self.bottomViewScrollView.bounds.height + self.bottomViewScrollView.contentInset.bottom)
-                self.bottomViewScrollView.setContentOffset(bottomOffset, animated: true)
+                let bottomOffset = CGPoint(x: 0, y: self.contentSize.height - self.bounds.height + self.contentInset.bottom)
+                self.setContentOffset(bottomOffset, animated: true)
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + backDelay) {
                 let topOffset = CGPoint(x: 0, y: 0)
-                self.bottomViewScrollView.setContentOffset(topOffset, animated: true)
+                self.setContentOffset(topOffset, animated: true)
             }
         }
     }
