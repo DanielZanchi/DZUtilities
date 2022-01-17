@@ -9,7 +9,7 @@ import UIKit
 
 extension UIScrollView {
     
-    enum ScrollType { case horizontal, vertical }
+    public enum ScrollType { case horizontal, vertical }
     
     public func showOff(scrollType: ScrollType, startDelay: Double = 0.6, backDelay: Double = 0.6) {
         DispatchQueue.main.asyncAfter(deadline: .now() + startDelay) {
