@@ -89,3 +89,9 @@ extension UIColor {
         }
     }
 }
+
+extension UIColor {
+    public var color: Color {
+        Color(self)
+    }
+}
