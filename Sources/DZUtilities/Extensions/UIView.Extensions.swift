@@ -79,8 +79,10 @@ extension UIView {
 
 extension UIView {
     
-    public func asImage() -> UIImage {
-        let renderer = UIGraphicsImageRenderer(bounds: bounds)
+    public func asImage(withScale scale: CGFloat = UIScreen.main.scale) -> UIImage? {
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = scale
+        let renderer = UIGraphicsImageRenderer(bounds: bounds, format: format)
         return renderer.image { rendererContext in
             layer.render(in: rendererContext.cgContext)
         }
