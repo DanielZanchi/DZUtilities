@@ -41,4 +41,12 @@ public struct DZUtilities {
         }
     }
     
+    public func measure(_ title: String, block: (@escaping () -> ()) -> ()) {
+        let startTime = CFAbsoluteTimeGetCurrent()
+        block {
+            let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
+            print("\(title) - time: \(timeElapsed)")
+        }
+    }
+    
 }
