@@ -28,3 +28,14 @@ extension CIImage {
         return cgImage
     }
 }
+
+extension CIImage {
+    
+    func mask(with maskImage: CIImage) -> CIImage? {
+        guard let filter = CIFilter(name: "CIBlendWithMask", parameters: [
+            kCIInputImageKey: self,
+            kCIInputMaskImageKey: maskImage]) else { return nil }
+        return filter.outputImage
+    }
+    
+}
