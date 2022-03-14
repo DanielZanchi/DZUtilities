@@ -81,10 +81,14 @@ extension UIColor {
             currentSaturation = currentSaturation * 100
             currentBrigthness = currentBrigthness * 100
             
+            let resultSaturation = (currentSaturation + additionalSaturation) > 100 ? 100 : currentSaturation + additionalSaturation
+            let resultBrightness = (currentBrigthness + additionalBrightness) > 100 ? 100 : (currentBrigthness + additionalBrightness)
+            let resultAlpha = (currentAlpha + additionalAlpha) > 1 ? 1 : (currentAlpha + additionalAlpha)
+            
             return UIColor(h: Int(currentHue + hue),
-                           s: Int(currentSaturation + additionalSaturation),
-                           b: Int(currentBrigthness + additionalBrightness),
-                           alpha: (currentAlpha + additionalAlpha))
+                           s: Int(resultSaturation),
+                           b: Int(resultBrightness),
+                           alpha: (resultAlpha))
         } else {
             return self
         }
