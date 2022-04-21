@@ -167,6 +167,9 @@ extension UIView {
         case .fromTopRightToBottomLeft:
             gradient.startPoint = CGPoint(x: 1, y: 0)
             gradient.endPoint = CGPoint(x: 0, y: 1)
+        case .fromTopToBottom:
+            gradient.startPoint = CGPoint(x: 0.5, y: 0)
+            gradient.endPoint = CGPoint(x: 0.5, y: 1)
         default:
             gradient.startPoint = CGPoint(x: 0, y: 0)
             gradient.endPoint = CGPoint(x: 0, y: 1)
@@ -180,6 +183,7 @@ extension UIView {
     }
     
     public enum Location {
+        case fromTopToBottom
         case fromTopRightToBottomLeft
     }
     
