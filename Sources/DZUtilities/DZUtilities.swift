@@ -49,7 +49,7 @@ public struct DZUtilities {
         }
     }
     
-    public getiOSVersion() -> String {
+    public func getiOSVersion() -> String {
         let os = ProcessInfo().operatingSystemVersionString
         return os
     }
