@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 extension UIApplication {
     
     public var getKeywindow: UIWindow? {
@@ -19,6 +20,7 @@ extension UIApplication {
     
 }
 
+@available(iOS 14, *)
 extension UIApplication {
     
     public var currentWindowScene: UIWindowScene? {

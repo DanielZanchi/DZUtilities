@@ -95,6 +95,7 @@ extension UIColor {
     }
 }
 
+@available(iOS 14, *)
 extension UIColor {
     public var color: Color {
         Color(self)

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(iOS 14, *)
 extension Color {
     public init(h: CGFloat, s: CGFloat, b: CGFloat, alpha: CGFloat) {
         self.init(UIColor(hue: h / 360, saturation: s / 100, brightness: b / 100, alpha: alpha))
@@ -17,6 +18,7 @@ extension Color {
     }
 }
 
+@available(iOS 14, *)
 extension Color {
     @available(iOS 14.0, *)
     public func modified(withAdditionalHue hue: CGFloat, additionalSaturation: CGFloat, additionalBrightness: CGFloat, additionalAlpha: CGFloat) -> Color {
@@ -29,6 +31,7 @@ extension Color {
     }
 }
 
+@available(iOS 14, *)
 extension Color {
     
     @available(iOS 14.0, *)
