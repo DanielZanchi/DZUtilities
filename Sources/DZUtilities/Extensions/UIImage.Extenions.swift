@@ -9,7 +9,7 @@ import UIKit
 
 extension UIImage {
     
-    public func resizedImage(withLongestLenghtOf longest: CGFloat) -> UIImage? {
+    public func resizedImage(withLongestLenghtOf longest: CGFloat) -> UIImage {
         if longest > self.size.width && longest > self.size.height {
             return self
         }
