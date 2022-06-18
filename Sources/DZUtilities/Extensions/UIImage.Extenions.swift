@@ -9,7 +9,7 @@ import UIKit
 
 extension UIImage {
     
-    public func resize(to newSize: CGSize) {
+    public func resize(to newSize: CGSize) -> UIImage {
         let renderer = UIGraphicsImageRenderer(size: newSize)
         let image = renderer.image { _ in
             self.draw(in: CGRect.init(origin: CGPoint.zero, size: newSize))
