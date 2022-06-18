@@ -9,6 +9,14 @@ import UIKit
 
 extension UIImage {
     
+    public func resize(to newSize: CGSize) {
+        let renderer = UIGraphicsImageRenderer(size: newSize)
+        let image = renderer.image { _ in
+            self.draw(in: CGRect.init(origin: CGPoint.zero, size: newSize))
+        }
+        return image
+    }
+    
     public func resizedImage(withLongestLenghtOf longest: CGFloat) -> UIImage {
         if longest > self.size.width && longest > self.size.height {
             return self
