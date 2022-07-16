@@ -117,7 +117,7 @@ extension UIView {
         self.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
-    func sameConstraints(as view: UIView, minus: CGFloat) {
+    public func sameConstraints(as view: UIView, minus: CGFloat) {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: minus).isActive = true
         self.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -minus).isActive = true
