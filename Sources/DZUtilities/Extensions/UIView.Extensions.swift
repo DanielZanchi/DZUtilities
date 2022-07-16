@@ -117,6 +117,14 @@ extension UIView {
         self.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
+    func sameConstraints(as view: UIView, minus: CGFloat) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: minus).isActive = true
+        self.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -minus).isActive = true
+        self.topAnchor.constraint(equalTo: view.topAnchor, constant: minus).isActive = true
+        self.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -minus).isActive = true
+    }
+    
     public func centerInSuperView() {
         if let superview = self.superview {
             self.translatesAutoresizingMaskIntoConstraints = false
