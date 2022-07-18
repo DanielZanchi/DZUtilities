@@ -77,7 +77,7 @@ extension UIColor {
         var currentAlpha: CGFloat = 0.0
         
         if self.getHue(&currentHue, saturation: &currentSaturation, brightness: &currentBrigthness, alpha: &currentAlpha) {
-            currentHue = currentHue * 360
+            currentHue = currentHue * 100
             currentSaturation = currentSaturation * 100
             currentBrigthness = currentBrigthness * 100
             
