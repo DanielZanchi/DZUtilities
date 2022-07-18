@@ -68,6 +68,7 @@ extension UIColor {
     
 }
 
+
 extension UIColor {
     public func modified(withAdditionalHue hue: CGFloat, additionalSaturation: CGFloat, additionalBrightness: CGFloat, additionalAlpha: CGFloat) -> UIColor {
         
@@ -77,14 +78,27 @@ extension UIColor {
         var currentAlpha: CGFloat = 0.0
         
         if self.getHue(&currentHue, saturation: &currentSaturation, brightness: &currentBrigthness, alpha: &currentAlpha) {
-            currentHue = currentHue * 100
+            currentHue = currentHue * 360
             currentSaturation = currentSaturation * 100
             currentBrigthness = currentBrigthness * 100
             
-            let resultSaturation = (currentSaturation + additionalSaturation) > 100 ? 100 : currentSaturation + additionalSaturation
-            let resultBrightness = (currentBrigthness + additionalBrightness) > 100 ? 100 : (currentBrigthness + additionalBrightness)
-            let resultAlpha = (currentAlpha + additionalAlpha) > 1 ? 1 : (currentAlpha + additionalAlpha)
+            var resultSaturation = currentSaturation + additionalSaturation
+            if resultSaturation < 0 { resultSaturation = 0 }
+            if resultSaturation > 100 { resultSaturation = 100 }
             
+            var resultBrightness = currentBrigthness + additionalBrightness
+            if resultBrightness < 0 { resultBrightness = 0 }
+            if resultBrightness > 100 { resultBrightness = 100 }
+            
+            var resultAlpha = (currentAlpha + additionalAlpha) > 1 ? 1 : (currentAlpha + additionalAlpha)
+            if resultAlpha < 0 { resultAlpha = 0 }
+            if resultAlpha > 1 { resultAlpha = 1 }
+            
+            var resultHue = currentHue + hue
+            if resultHue < 0 { resultHue = 0 }
+            if resultHue > 360 { resultHue = 360 }
+            
+            print("hue: \(resultHue) - saturation: \(resultSaturation) - bright: \(resultBrightness) - alpha: \(resultAlpha)")
             return UIColor(h: Int(currentHue + hue),
                            s: Int(resultSaturation),
                            b: Int(resultBrightness),
