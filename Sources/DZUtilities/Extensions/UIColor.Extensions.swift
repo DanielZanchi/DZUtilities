@@ -98,7 +98,6 @@ extension UIColor {
             if resultHue < 0 { resultHue = 0 }
             if resultHue > 360 { resultHue = 360 }
             
-            print("hue: \(resultHue) - saturation: \(resultSaturation) - bright: \(resultBrightness) - alpha: \(resultAlpha)")
             return UIColor(h: Int(currentHue + hue),
                            s: Int(resultSaturation),
                            b: Int(resultBrightness),
