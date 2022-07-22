@@ -7,19 +7,19 @@
 
 import Foundation
 
-func DZError(_ text: String, error: Error, line: Int = #line, function: String = #function) {
+public func DZError(_ text: String, error: Error, line: Int = #line, function: String = #function) {
     #if DEBUG
     print("🔴🔴🔴 - \(text): \(error.localizedDescription) - in \(function) at \(line)")
     #endif
 }
 
-func DZError(_ text: String, line: Int = #line, function: String = #function) {
+public func DZError(_ text: String, line: Int = #line, function: String = #function) {
     #if DEBUG
     print("🔴🔴🔴 - \(text) - in \(function) at \(line)")
     #endif
 }
 
-func DZLog(_ text: Any, line: Int = #line, function: String = #function) {
+public func DZLog(_ text: Any, line: Int = #line, function: String = #function) {
     #if DEBUG
     print("🟡🟡🟡 - \(text) - in \(function) at \(line)")
     #endif
