@@ -13,14 +13,14 @@ public func DZError(_ text: String, error: Error, line: Int = #line, function: S
     #endif
 }
 
-public func DZError(_ text: String, line: Int = #line, function: String = #function) {
+public func DZError(_ text: String? = nil, line: Int = #line, function: String = #function) {
     #if DEBUG
-    print("🔴🔴🔴 - \(text) - in \(function) at \(line)")
+    print("🔴🔴🔴 - \(text ?? "") - in \(function) at \(line)")
     #endif
 }
 
-public func DZLog(_ text: Any, line: Int = #line, function: String = #function) {
+public func DZLog(_ text: Any?, line: Int = #line, function: String = #function) {
     #if DEBUG
-    print("🟡🟡🟡 - \(text) - in \(function) at \(line)")
+    print("🟡🟡🟡 - \(text ?? "") - in \(function) at \(line)")
     #endif
 }
