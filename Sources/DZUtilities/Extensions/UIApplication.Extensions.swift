@@ -45,7 +45,7 @@ extension UIApplication {
     public func topViewController(controller: UIViewController? = UIApplication.shared.rootViewController) -> UIViewController? {
 
         if controller == nil {
-            return topViewController(controller: rootViewController)
+            return nil
         }
         
         if let navigationController = controller as? UINavigationController {
