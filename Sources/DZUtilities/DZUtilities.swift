@@ -49,6 +49,14 @@ public struct DZUtilities {
         }
     }
     
+    public func measure(block: (@escaping () -> ()) -> (), completion: @escaping ((Double) -> Void) ) {
+        let startTime = CFAbsoluteTimeGetCurrent()
+        block {
+            let timeElapsed = (CFAbsoluteTimeGetCurrent() - startTime)
+            completion(timeElapsed)
+        }
+    }
+    
     public func getiOSVersion() -> String {
         let os = ProcessInfo().operatingSystemVersionString
         return os
