@@ -9,7 +9,7 @@ import Foundation
 
 public func DZError(_ text: String?, error: Error?, line: Int = #line, function: String = #function) {
 #if DEBUG
-    print("🔴🔴🔴 - \(text ?? ""): \(error?.localizedDescription ?? "") - in \(function) at \(line)")
+	print("🔴🔴🔴 - \(text ?? ""): \(error?.localizedDescription ?? "") \n\n \(error) \n\n - in \(function) at \(line)")
 #endif
 }
 
