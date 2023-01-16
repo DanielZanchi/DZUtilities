@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoadableViewController: UIViewController {
+public class LoadableViewController: UIViewController {
 	
 	static func nibName() -> String {
 		return String(describing: self)
