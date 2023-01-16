@@ -7,17 +7,17 @@
 
 import UIKit
 
-public class LoadableViewController: UIViewController {
+open class LoadableViewController: UIViewController {
 	
-	static func nibName() -> String {
+	private static func nibName() -> String {
 		return String(describing: self)
 	}
 	
-	init() {
+	public init() {
 		super.init(nibName: Self.nibName(), bundle: nil)
 	}
 	
-	required init?(coder: NSCoder) {
+	required public init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
