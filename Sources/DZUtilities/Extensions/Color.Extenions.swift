@@ -4,9 +4,9 @@
 //
 //  Created by Daniel Zanchi on 01/02/22.
 //
-
+#if canImport(UIKit)
 import SwiftUI
-
+import UIKit
 @available(iOS 14, *)
 extension Color {
     public init(h: CGFloat, s: CGFloat, b: CGFloat, alpha: CGFloat) {
@@ -40,3 +40,4 @@ extension Color {
     }
     
 }
+#endif

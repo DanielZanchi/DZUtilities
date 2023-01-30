@@ -5,6 +5,7 @@
 //  Created by Daniel Zanchi on 19/03/22.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 public protocol AlertPresenter where Self: UIViewController {
@@ -23,3 +24,4 @@ public extension AlertPresenter {
         present(alertController, animated: true, completion: nil)
     }
 }
+#endif

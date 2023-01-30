@@ -5,6 +5,7 @@
 //  Created by Daniel Zanchi on 17/01/22.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 extension UIScrollView {
@@ -29,3 +30,4 @@ extension UIScrollView {
     }
     
 }
+#endif

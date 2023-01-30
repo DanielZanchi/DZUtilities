@@ -4,7 +4,7 @@
 //
 //  Created by Daniel Zanchi on 23/12/21.
 //
-
+#if canImport(UIKit)
 import UIKit
 
 extension NSLayoutConstraint {
@@ -28,3 +28,4 @@ extension NSLayoutConstraint {
         return self
     }
 }
+#endif

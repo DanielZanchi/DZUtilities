@@ -1,3 +1,4 @@
+#if canImport(UIKit)
 import UIKit
 
 public let DZUtils = DZUtilities.shared
@@ -63,3 +64,4 @@ public struct DZUtilities {
     }
     
 }
+#endif

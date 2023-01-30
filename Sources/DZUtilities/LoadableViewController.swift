@@ -5,6 +5,7 @@
 //  Created by Daniel Zanchi on 16/01/23.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 open class LoadableViewController: UIViewController {
@@ -22,3 +23,4 @@ open class LoadableViewController: UIViewController {
 	}
 	
 }
+#endif

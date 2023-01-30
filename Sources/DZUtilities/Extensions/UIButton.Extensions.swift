@@ -4,7 +4,7 @@
 //
 //  Created by Daniel Zanchi on 18/11/22.
 //
-
+#if canImport(UIKit)
 import UIKit
 
 extension UIButton {
@@ -20,3 +20,4 @@ extension UIButton {
         setAttributedTitle(titleString, for: .normal)
     }
 }
+#endif

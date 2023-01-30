@@ -4,7 +4,7 @@
 //
 //  Created by Daniel Zanchi on 03/02/22.
 //
-
+#if canImport(UIKit)
 import UIKit
 
 extension UIApplication {
@@ -66,3 +66,4 @@ extension UIApplication {
     }
     
 }
+#endif

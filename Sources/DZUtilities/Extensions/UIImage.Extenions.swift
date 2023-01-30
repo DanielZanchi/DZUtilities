@@ -5,8 +5,7 @@
 //  Created by Daniel Zanchi on 20/05/22.
 //
 
-import UIKit
-
+#if canImport(UIKit)
 extension UIImage {
     
     public func resize(to newSize: CGSize, scale: CGFloat? = nil, quality: CGInterpolationQuality = .default) -> UIImage {
@@ -47,3 +46,4 @@ extension UIImage {
     }
     
 }
+#endif

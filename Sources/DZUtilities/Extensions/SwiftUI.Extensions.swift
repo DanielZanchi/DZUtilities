@@ -11,6 +11,7 @@ private struct SafeAreaInsetsEnvironmentKey: EnvironmentKey {
     static let defaultValue: (top: CGFloat, bottom: CGFloat) = (0, 0)
 }
 
+@available(macOS 10.15, *)
 @available(iOS 13.0, *)
 public extension EnvironmentValues {
     var safeAreaInsets: (top: CGFloat, bottom: CGFloat) {
@@ -24,6 +25,7 @@ public struct SizePreferenceKey: PreferenceKey {
     public static func reduce(value: inout CGSize, nextValue: () -> CGSize) {}
 }
 
+@available(macOS 10.15, *)
 @available(iOS 13.0, *)
 public extension View {
     func readSize(isActive: Bool = true, onChange: @escaping (CGSize) -> Void) -> some View {

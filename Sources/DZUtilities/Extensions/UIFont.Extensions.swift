@@ -4,7 +4,7 @@
 //
 //  Created by Daniel Zanchi on 04/04/22.
 //
-
+#if canImport(UIKit)
 import UIKit
 
 public extension UIFont {
@@ -15,4 +15,4 @@ public extension UIFont {
 		return UIFont(descriptor: descriptor, size: size)
 	}
 }
-
+#endif
