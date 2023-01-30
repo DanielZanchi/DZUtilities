@@ -6,6 +6,8 @@
 //
 
 #if canImport(UIKit)
+import UIKit
+
 extension UIImage {
     
     public func resize(to newSize: CGSize, scale: CGFloat? = nil, quality: CGInterpolationQuality = .default) -> UIImage {
