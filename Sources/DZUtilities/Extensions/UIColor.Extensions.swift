@@ -10,7 +10,7 @@ import SwiftUI
 
 extension UIColor {
 	
-	var hexString: String {
+	public var hexString: String {
 		let cgColorInRGB = cgColor.converted(to: CGColorSpace(name: CGColorSpace.sRGB)!, intent: .defaultIntent, options: nil)!
 		let colorRef = cgColorInRGB.components
 		let r = colorRef?[0] ?? 0
