@@ -4,7 +4,7 @@
 //
 //  Created by Daniel Zanchi on 09/02/23.
 //
-
+#if canImport(UIKit)
 import UIKit
 
 extension UIViewController {
