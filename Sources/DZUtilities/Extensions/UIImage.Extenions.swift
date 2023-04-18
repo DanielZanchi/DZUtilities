@@ -41,7 +41,7 @@ extension UIImage {
     }
     
     public func resizedImage(withLongestLenghtOf longest: CGFloat, scale: CGFloat? = nil, quality: CGInterpolationQuality = .default) -> UIImage {
-
+		guard longest < max(self.size.height, self.size.width) else { return self }
         let newSize = getNewSize(withLongestLenghtOf: longest)
         
         return resize(to: newSize, scale: scale, quality: quality)
