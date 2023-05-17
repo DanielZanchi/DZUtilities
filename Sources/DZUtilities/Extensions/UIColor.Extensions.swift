@@ -105,8 +105,10 @@ extension UIColor {
 
 extension UIColor {
     
-    public func image(ofSize size: CGSize) -> UIImage {
-        return UIGraphicsImageRenderer(size: size).image { rendererContext in
+	public func image(ofSize size: CGSize, scale: CGFloat = 1) -> UIImage {
+		let format = UIGraphicsImageRendererFormat.default()
+		format.scale = scale
+        return UIGraphicsImageRenderer(size: size, format: format).image { rendererContext in
             self.setFill()
             rendererContext.fill(CGRect(origin: .zero, size: size))
         }
